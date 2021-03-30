@@ -1,0 +1,173 @@
+{
+	"variables": [],
+	"info": {
+		"name": "studentcollection",
+		"_postman_id": "cf98d8ba-de96-4196-3cf1-0b41ec39f73b",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "createStudent_json",
+			"request": {
+				"url": "http://localhost:8081/student",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"srn\":10,\n    \"sname\": \"Kirti\",\n    \"sclass\": \"BTech\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "createStudent_json_invalid_name",
+			"request": {
+				"url": "http://localhost:8081/student",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"srn\":11,\n    \"sname\": \"D\",\n    \"sclass\": \"BA\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "createStudent_xml",
+			"request": {
+				"url": "http://localhost:8081/student",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/xml",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<Student>\n    <srn>10</srn>\n    <sname>Amol</sname>\n    <sclass>BTech</sclass>\n</Student>"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "getStudent_json_invalid_srn",
+			"request": {
+				"url": "http://localhost:8081/students/-1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "getStudent_json",
+			"request": {
+				"url": "http://localhost:8081/students/11",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "getStudent_json_not_found",
+			"request": {
+				"url": "http://localhost:8081/students/999",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "getStudent_xml",
+			"request": {
+				"url": "http://localhost:8081/students/11",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "getAllStudents_json",
+			"request": {
+				"url": "http://localhost:8081/students",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "getAllStudents_xml",
+			"request": {
+				"url": "http://localhost:8081/students",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
